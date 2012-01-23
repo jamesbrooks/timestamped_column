@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Records modified time for individual columns."
   s.description = "Records modified time for individual columns."
 
-  s.files = Dir["lib/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["lib/**/*"] + ["MIT-LICENSE", "README.md"]
 
   s.add_dependency 'rails'
   s.add_dependency 'activesupport'
