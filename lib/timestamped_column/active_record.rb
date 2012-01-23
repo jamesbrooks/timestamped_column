@@ -8,7 +8,7 @@ module TimestampedColumn::ActiveRecord
 
   module ClassMethods
     def timestamped_column(column, opts={})
-      timestamp_column = opts[:timestamp_column] || "#{column}_updated_at"
+      timestamp_column = opts[:column] || "#{column}_updated_at"
 
       self.timestamped_columns ||= {}
       self.timestamped_columns[column] = timestamp_column

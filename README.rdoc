@@ -1,3 +1,0 @@
-= Time-stamped Column
-
-Records modified time for individual columns.
