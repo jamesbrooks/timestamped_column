@@ -1,0 +1,24 @@
+= Time-stamped Column
+
+Records modified time for individual columns.
+
+== Installation
+
+In your Gemfile
+
+  gem 'timestamped_column'
+
+and run bundle install
+
+
+== Usage (in a model)
+
+To record the most recent modification time of a field named :email_address
+
+  # writes modification time to :email_address_updated_at
+  timestamped_column :email_address
+
+The modification time field can be customised by passing in a :column option to timestamped_column
+
+  # writes modification time to :email_address_changed_at
+  timestamped_column :email_address, :column => :email_address_changed_at
