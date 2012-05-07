@@ -1,6 +1,6 @@
-= Time-stamped Column
+= Timestamped Column
 
-Records modified time for individual columns.
+Records modification time for specified database columns on a per-row basis (ActiveRecord).
 
 == Installation
 
@@ -13,12 +13,8 @@ and run bundle install
 
 == Usage (in a model)
 
-To record the most recent modification time of a field named :email_address
+Usage is near identical to how created_at and updated_at function with the exception that Timestamped Column tracks individual column changes rather than entire row changes.
 
-  # writes modification time to :email_address_updated_at
-  timestamped_column :email_address
+Automatically timestamps when particular attributes (columns) have been changed if a table has fields suffixed with <tt>_updated_at/_updated_on</tt>
 
-The modification time field can be customised by passing in a :column option to timestamped_column
-
-  # writes modification time to :email_address_changed_at
-  timestamped_column :email_address, :column => :email_address_changed_at
+Example: A table with a field <tt>user_name</tt> would have it's modification time recorded if a field named <tt>user_name_updated_at</tt> exists.
