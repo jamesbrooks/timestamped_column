@@ -1,6 +1,12 @@
 language: ruby
 
+before_install:
+  - rvm @default,@global do gem uninstall bundler -x
+  - gem install bundle --version '~> 1.0.0'
+  - bundle --version
+
 rvm:
+  - ree
   - 1.8.7
   - 1.9.2
   - 1.9.3
