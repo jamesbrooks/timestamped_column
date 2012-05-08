@@ -1,4 +1,12 @@
 language: ruby
+
 rvm:
+  - 1.8.7
   - 1.9.2
   - 1.9.3
+
+gemfile:
+  - .travis/gemfiles/rails_3.0
+  - .travis/gemfiles/rails_3.1
+  - .travis/gemfiles/rails_3.2
+  - .travis/gemfiles/rails_edge
