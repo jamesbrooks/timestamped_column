@@ -1,4 +1,5 @@
-# timestamped_column [![Build Status](https://secure.travis-ci.org/JamesBrooks/timestamped_column.png)](http://travis-ci.org/JamesBrooks/timestamped_column>) [![Dependency Status](https://gemnasium.com/JamesBrooks/timestamped_column.png)](https://gemnasium.com/JamesBrooks/timestamped_column)
+# timestamped_column
+[![Build Status](https://secure.travis-ci.org/JamesBrooks/timestamped_column.png)](http://travis-ci.org/JamesBrooks/timestamped_column>) [![Dependency Status](https://gemnasium.com/JamesBrooks/timestamped_column.png)](https://gemnasium.com/JamesBrooks/timestamped_column)
 
 Records the modification time for specific database columns on individual records (using ActiveRecord).
 
