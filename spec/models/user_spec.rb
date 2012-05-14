@@ -3,7 +3,9 @@ require 'spec_helper'
 describe 'User with timestamped columns' do
   describe 'Sanity' do
     before(:each) do
-      @user = FactoryGirl.build(:user)
+      @user = User.new({
+        :name => 'Joe User'
+      })
     end
 
     it 'should initialize' do
@@ -25,7 +27,9 @@ describe 'User with timestamped columns' do
 
   describe 'Non-persisted models' do
     before(:each) do
-      @user = FactoryGirl.build(:user)
+      @user = User.new({
+        :name => 'Joe User'
+      })
     end
 
     it 'should not have timestamped columns set' do
@@ -37,7 +41,9 @@ describe 'User with timestamped columns' do
 
   describe 'Persisting models' do
     before(:each) do
-      @user = FactoryGirl.build(:user)
+      @user = User.new({
+        :name => 'Joe User'
+      })
     end
 
     it 'should set timestamped column values on create for attributes with set values' do
@@ -59,7 +65,8 @@ describe 'User with timestamped columns' do
 
   describe 'Updating models' do
     before(:each) do
-      @user = FactoryGirl.create(:user, {
+      @user = User.create({
+        :name  => 'Joe User',
         :email => 'joe.user@email.com',
         :phone => '123-456-7890'
       })
@@ -69,14 +76,14 @@ describe 'User with timestamped columns' do
       expect {
         @user.phone = '000-000-0000'
         @user.save
-      }.to_not change { @user.name_updated_at }
+      }.to_not change { @user.name_updated_at.to_i }
     end
 
     it 'should update non-timestamped fields without updating any timestamped fields (part 2)' do
       expect {
         @user.phone = '000-000-0000'
         @user.save
-      }.to_not change { @user.email_updated_at }
+      }.to_not change { @user.email_updated_at.to_i }
     end
 
     it 'should update an attributes timestamped column if the attribute changes' do
@@ -84,7 +91,7 @@ describe 'User with timestamped columns' do
         expect {
           @user.name = 'John Blogs'
           @user.save
-        }.to change { @user.name_updated_at }
+        }.to change { @user.name_updated_at.to_i }
       end
     end
 
@@ -93,7 +100,7 @@ describe 'User with timestamped columns' do
         expect {
           @user.name = 'John Blogs'
           @user.save
-        }.to_not change { @user.email_updated_at }
+        }.to_not change { @user.email_updated_at.to_i }
       end
     end
 
