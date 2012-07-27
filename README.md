@@ -6,9 +6,11 @@ Records the modification time for specific database columns on individual record
 
 ## Requirements
 
+* Rails 3
+
 Tested and working correctly with:
 
-* Ruby: 1.8.7, 1.9.2, 1.9.3 and REE.
+* Ruby: 1.8.7 1.9.3
 * Rails: 3.0, 3.1, 3.2 and edge.
 
 View the [test results for the most recent commit](http://travis-ci.org/JamesBrooks/timestamped_column) using these Ruby and Rails version combinations (thanks to Travis CI).
